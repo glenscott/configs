@@ -2,8 +2,6 @@
 
 ; minimalist look
 (menu-bar-mode -1)
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
 
 ;;;; turn on syntax highlighting for HTML files
 (add-hook 'sgml-mode-hook 'turn-on-font-lock)
@@ -28,18 +26,21 @@
 (setq auto-mode-alist
    (cons '("\\.text" . markdown-mode) auto-mode-alist))
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(gud-gdb-command-name "gdb --annotate=1")
  '(large-file-warning-threshold nil)
- '(php-mode-force-pear t))
+ '(menu-bar-mode nil)
+ '(php-mode-force-pear t)
+ '(scroll-bar-mode nil)
+ '(tool-bar-mode nil))
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  )
 
 ; enable IDO mode
@@ -49,3 +50,8 @@
 
 ;; Allow hash to be entered  
 (global-set-key (kbd "M-3") '(lambda () (interactive) (insert "#")))
+
+;; Enable Ctrl-x Ctrl-m as M-x
+;; http://sites.google.com/site/steveyegge2/effective-emacs#item2
+(global-set-key "\C-x\C-m" 'execute-extended-command)
+(global-set-key "\C-c\C-m" 'execute-extended-command)
