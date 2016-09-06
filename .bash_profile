@@ -13,7 +13,7 @@ source ~/perl5/perlbrew/etc/bashrc
 export PATH="/Users/glenscott/AWS-ElasticBeanstalk-CLI-2.6.4/eb/linux/python2.7:$PATH"
 
 ## Git Prompt
-. ~/git-prompt.sh
+. /usr/local/etc/bash_completion.d/git-prompt.sh 
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWCOLORHINTS=true
 export PS1='\w$(__git_ps1 " (%s)")\$ '
